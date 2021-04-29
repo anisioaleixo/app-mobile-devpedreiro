@@ -1,31 +1,16 @@
+
 import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import UserContextProvider from './src/contexts/UserContexts'
+import MainStack from './src/stacks/MainStack'
 
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-} from 'react-native'
-
-const App = () => {
-
+export default () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Eu sou um dev!</Text>
-    </SafeAreaView>
+    <UserContextProvider>
+      <NavigationContainer>
+        <MainStack />
+      </NavigationContainer>
+    </UserContextProvider>
+
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'#fff'
-  },
-  text: {
-    fontSize: 24,
-    color:'black'
-  }, 
-})
-
-export default App;
